@@ -1,0 +1,17 @@
+syntax = "proto3";
+package CubesExample;
+
+option csharp_namespace = "CubesExample";
+
+message Vector2 {
+    float xPos = 1;
+    float yPos = 2;
+}
+
+message InputMessage {
+    Vector2 inputPos = 1;
+}
+
+message OutputMessage {
+    Vector2 movementDirection = 1;
+}
