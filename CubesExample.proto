@@ -8,8 +8,14 @@ message Vector2 {
     float yPos = 2;
 }
 
+message Ray {
+    float distance = 1;
+    bool enemy = 2;
+}
+
+// rays are always considered evenly spaced around a circle so no need for passing angle
 message InputMessage {
-    Vector2 inputPos = 1;
+    repeated Ray rays = 1;
 }
 
 message OutputMessage {
