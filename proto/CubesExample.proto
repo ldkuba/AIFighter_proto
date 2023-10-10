@@ -13,6 +13,10 @@ message Ray {
     bool enemy = 2;
 }
 
+message SetupMessage {
+    bool isHunter = 1;
+}
+
 // rays are always considered evenly spaced around a circle so no need for passing angle
 message InputMessage {
     repeated Ray rays = 1;
