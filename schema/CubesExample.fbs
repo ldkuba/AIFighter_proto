@@ -1,26 +1,25 @@
 namespace CubesExample;
 
-attribute "priority";
-
-enum Color : byte { Red = 1, Green, Blue }
-
-union Any { Monster }
-
-struct Vec3 {
+struct Vector2 {
   x:float;
   y:float;
-  z:float;
 }
 
-table Monster {
-  pos:Vec3;
-  mana:short = 150;
-  hp:short = 100;
-  name:string;
-  friendly:bool = false (deprecated, priority: 1);
-  inventory:[ubyte];
-  color:Color = Blue;
-  test:Any;
+struct Ray {
+  distance:float;
+  enemy:bool;
 }
 
-root_type Monster;
+table SetupMessage {
+  is_hunter:bool;
+}
+
+table InputMessage {
+  rays:[Ray];
+}
+
+table OutputMessage {
+  movement_direction:Vector2;
+}
+
+root_type SetupMessage;
